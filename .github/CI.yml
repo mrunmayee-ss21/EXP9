@@ -1,0 +1,15 @@
+name: CI
+on: [push ,pull_request]
+jobs:
+  build-and-test:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v4
+       - name: set up Python
+         uses: actions/setup python@v4
+         with:
+           python-version: "3.14"
+       - name: Install dependencies
+         run: pip install pytest
+       - name: Run test
+         run: pytest -v
