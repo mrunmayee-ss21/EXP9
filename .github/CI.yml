@@ -10,6 +10,6 @@ jobs:
          with:
           python-version: "3.11"
        - name: Install dependencies
-         run: pip install pytest
+         run: py -m pip install pytest
        - name: Run test
-         run: pytest -v
+         run: py -m pytest -v
